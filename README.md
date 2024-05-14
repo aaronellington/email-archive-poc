@@ -18,6 +18,13 @@ vendor/bin/sail php artisan queue:work
 ops/bin/upload
 ```
 
-## Live Demo
+## Helpful Links
 
-https://email-archive-poc.apps.ellington.io/
+-   [Live Demo](https://email-archive-poc.apps.ellington.io/)
+-   [Commit](https://github.com/aaronellington/email-archive-poc/commit/f9b1655993b19d610c5aa0abd96dd8c406a67f57) where most of the work for the task was completed
+
+## Notes
+
+-   I'm sure it will be obvious from looking at this that it's my first Laravel project but creating this taught me a lot about how the stack works and I'm excited to learn more about it.
+-   I probably could have taken more advantage of Livewire/Volt components to make some portions a little less repetitive.
+-   Right now I'm polling to notice when the worker is complete but if I had more time I would have liked to setup Laravel Echo for real time updates.

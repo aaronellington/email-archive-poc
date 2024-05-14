@@ -10,7 +10,14 @@ new class extends Component {
     use WithFileUploads;
 
     public $message = '';
+    public $currentUrl;
+
     public $iteration = 0;
+
+    public function mount()
+    {
+        $this->currentUrl = url()->current();
+    }
 
     #[Validate('required|file|mimes:eml|max:1024')]
     public $files = [];
@@ -45,9 +52,18 @@ new class extends Component {
 }; ?>
 
 <form wire:submit="save">
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="upload{{ $iteration }}">
-        Upload email message (.eml files):
-    </label>
+    <div class="relative mb-4">
+        <h1 class="text-xl">API Upload Instructions:</h1>
+        <div class="bg-gray-900 text-white p-4 rounded-md">
+            <div class="overflow-x-auto">
+                <pre id="code" class="text-gray-300"><code>curl \
+    -F "file=@tests/TestFiles/script_injection.eml" \
+    {{ $currentUrl }}/api/email-messages</code></pre>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-xl">Web Upload:</h1>
+
     <input wire:model="files" accept=".eml" id="upload{{ $iteration }}" name="files"
         class="block w-full text-sm
         text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none
