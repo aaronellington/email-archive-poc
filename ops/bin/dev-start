@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+# Put the development env file into place to get default values
+[ -f .env ] || cp .env.example .env
+
+# Install PHP dependencies
+composer install
+
+# Generate app key
+php artisan key:generate
+
+# Make sure sail is configured correctly
+# (this updates your .env file to have the correct values)
+php artisan sail:install --with mysql
+
+# Start the development environment in Docker/sail
+./vendor/bin/sail up --wait
+
+# Run the database migrations
+./vendor/bin/sail php artisan migrate
+
+# Build NPM assets
+./vendor/bin/sail npm install
+./vendor/bin/sail npm run build
+
+# Open the application in your browser
+./vendor/bin/sail open
