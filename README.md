@@ -1,5 +1,7 @@
 # email-archive-poc
 
+[![Laravel](https://github.com/aaronellington/email-archive-poc/actions/workflows/laravel.yml/badge.svg)](https://github.com/aaronellington/email-archive-poc/actions/workflows/laravel.yml)
+
 ## Development Environment Setup
 
 ```shell
