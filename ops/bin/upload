@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+curl \
+    -X POST \
+    -F "image=@tests/TestFiles/script_injection.eml" \
+    localhost/api/email-messages

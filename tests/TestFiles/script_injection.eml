@@ -1,0 +1,23 @@
+From: Kristel <kristel@example.com>
+Date: Fri, 10 May 2024 11:18:00 -0500
+Subject: Hello there!
+To: aaron@example.com
+Cc: Eric <eric@example.com>
+Content-Type: multipart/mixed; boundary="000000000000eb87fd06181be1af"
+
+--000000000000eb87fd06181be1af
+Content-Type: multipart/alternative; boundary="000000000000eb87fc06181be1ad"
+
+--000000000000eb87fc06181be1ad
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Aaron,
+
+Happy Friday!
+--000000000000eb87fc06181be1ad
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div id="dusk-test"><script>document.querySelector("#dusk-test").innerHTML = "you shall not pass"</script>
+Happy Friday!
